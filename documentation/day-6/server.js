@@ -9,36 +9,31 @@ const messageRoutes = require("./routes/messageRoutes");
 
 const createEmailIndex = require("./indexing/emailIndex");
 
-
 const app = express();
-
 
 // Database Connection
 connectDB();
-
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-
-// Home API
+// Home Route
 app.get("/", (req, res) => {
-    res.send("Portfolio API Running");
+    res.send("Portfolio API Running...");
 });
 
-
-// Routes Integration
+// Routes
 app.use("/api/users", userRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/messages", messageRoutes);
 
-
-// Create Index
+// Create Email Index
 createEmailIndex();
 
+// Start Server
+const PORT = 5000;
 
-// Server Start
-app.listen(5000, () => {
-    console.log("Server started on port 5000");
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });

@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - portfolio-network
+
+  backend:
+    build: ./backend
+    container_name: portfolio-backend-container
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    networks:
+      - portfolio-network
+
+volumes:
+  mongo-data:
+
+networks:
+  portfolio-network:

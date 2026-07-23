@@ -1,9 +1,10 @@
 {
   "name": "portfolio-project",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,13 @@
     "url": "https://github.com/Karina14082005/portfolio-project/issues"
   },
   "homepage": "https://github.com/Karina14082005/portfolio-project#readme",
-  "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
-    "express": "^5.2.1"
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.4"
   }
 }
